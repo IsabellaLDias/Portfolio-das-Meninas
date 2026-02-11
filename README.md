@@ -12,7 +12,7 @@
     </td>
     <td>
       <div>
-        <img src="Logo - Portfólio das Meninas.png" alt="Logo do Projeto" width="1200px"/>
+        <img src="Logo - Portfólio das Meninas.png" alt="Logo do Projeto" "/>
       </div>
     </td>
   </tr> 
