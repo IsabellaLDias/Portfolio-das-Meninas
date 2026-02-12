@@ -13,11 +13,13 @@ https://www.figma.com/design/o6PHaJHsMuwfh7PNxjRqZt/Developer-Portfolio--Communi
     </td>
     <td>
       <div>
-        <img 
-          src="Logo - Portfólio das Meninas.png" 
-          alt="Logo do Projeto" 
-          height="180"
-        />
+        <td width="350px" align="center">
+  <img 
+    src="Logo - Portfólio das Meninas.png" 
+    alt="Logo do Projeto"
+    height="180"
+  />
+</td>
   </tr> 
 </table>
 
