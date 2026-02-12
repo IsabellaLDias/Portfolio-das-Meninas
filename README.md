@@ -13,7 +13,7 @@ https://www.figma.com/design/o6PHaJHsMuwfh7PNxjRqZt/Developer-Portfolio--Communi
     </td>
     <td>
       <div>
-        <img src="Logo - Portfólio das Meninas.png" alt="Logo do Projeto" width="120px"/>
+        <img src="Logo - Portfólio das Meninas.png" alt="Logo do Projeto" width="350px"/>
       </div>
     </td>
   </tr> 
