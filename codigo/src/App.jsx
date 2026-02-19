@@ -1,33 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//import Navbar from './components/layout/Navbar'
+import Home from './components/sections/Home'
+//import About from './components/sections/About'
+//import Projects from './components/sections/Projects'
+//import Skills from './components/sections/Skills'
+//import Contact from './components/sections/Contact'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    // O main envolve o conteúdo
+    <main className="relative bg-lavender-main h-screen w-fulle">
+      <Home />
+      {/* <Navbar />  <--- IMPORTANTE: Comente esta linha também! */}
+      {/*<About />*/}
+      {/*<Projects />*/}
+      {/*<Skills />*/}
+      {/*<Contact />*/}
+    </main>
   )
 }
 
