@@ -10,6 +10,9 @@ body {
 @import "tailwindcss";
 
 
+@import "tailwindcss";
+
+
 @theme {
   --color-lavender-main: #E0BBE4;
   --color-deep-purple: #4A2c4A;
@@ -338,3 +341,10 @@ html, body, #root {
 }
 
 /* footer - fim */
+}
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
