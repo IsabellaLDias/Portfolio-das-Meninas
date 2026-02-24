@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
-const Home = () => {
+const Home = ({ lang }) => {
   return (
     <section id="home" className="relative w-full h-screen bg-lavender-main overflow-hidden flex items-center">
       
@@ -50,7 +50,9 @@ const Home = () => {
           </h2>
 
           <h3 className="text-3xl font-bold text-deep-purple">
-            Engineer + Junior Front-end Developer
+            {lang === 'pt'
+              ? 'Engenheira + Desenvolvedora Front-end Júnior'
+              : 'Engineer + Junior Front-end Developer'}
           </h3>
 
           {/* Ícones de Redes Sociais (Placeholder) */}
@@ -83,7 +85,7 @@ const Home = () => {
 
       {/* Indicador de Scroll */}
       <div className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce">
-        <span>↓</span> Scroll
+        <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
       </div>
 
     </section>

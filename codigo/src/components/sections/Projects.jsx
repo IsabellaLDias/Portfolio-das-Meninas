@@ -2,19 +2,23 @@ import { useState } from "react"
 import project1 from "../../assets/images/project1.png"
 import project2 from "../../assets/images/project2.png"
 
-function Projects() {
+function Projects({ lang }) {
   const projects = [
     {
-      title: "Simon Game",
+      title: lang === 'pt' ? "Jogo Simon" : "Simon Game",
       description:
-        "Interactive memory game built with JavaScript.",
+        lang === 'pt'
+          ? "Jogo da memória interativo construído com JavaScript."
+          : "Interactive memory game built with JavaScript.",
       image: project1,
       tech: ["HTML5", "CSS3", "JavaScript", "ReactJS"]
     },
     {
-      title: "Portfolio Website",
+      title: lang === 'pt' ? "Portfólio Pessoal" : "Portfolio Website",
       description:
-        "Personal responsive portfolio website.",
+        lang === 'pt'
+          ? "Website de portfólio pessoal responsivo."
+          : "Personal responsive portfolio website.",
       image: project2,
       tech: ["ReactJS", "CSS3"]
     }
@@ -29,14 +33,14 @@ function Projects() {
   const project = projects[index]
 
   return (
-    <section className="projects">
+    <section id="projects" className="projects relative">
 
       <div className="project-image">
         <img src={project.image} alt={project.title} />
       </div>
 
       <div className="project-content">
-        <h2>Projects</h2>
+        <h2>{lang === 'pt' ? 'Projetos' : 'Projects'}</h2>
         <h3>{project.title}</h3>
 
         <p>{project.description}</p>
@@ -54,6 +58,10 @@ function Projects() {
         <div className="project-number">
           {String(index + 1).padStart(2, "0")}
         </div>
+      </div>
+      {/* Indicador de Scroll */}
+      <div className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce">
+        <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
       </div>
 
     </section>

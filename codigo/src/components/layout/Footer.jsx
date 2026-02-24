@@ -2,11 +2,16 @@ import whatsIcon from '../../assets/icons/whats.png';
 import githubIcon from '../../assets/icons/github.png';
 import linkedinIcon from '../../assets/icons/linkedin.png';
 import twitterIcon from '../../assets/icons/twitter.png';
-function Footer() {
+function Footer({ lang }) {
+  const name = 'Maria' // ajuste se quiser outro nome
+  const copy = lang === 'pt'
+    ? `Todos os direitos reservados © 2026 ${name}`
+    : `All rights reserved © 2026 ${name}`
+
   return (
     <footer className="footer">
 
-      <h3 className="footer-name">aaaa</h3>
+      <h3 className="footer-name">{name}</h3>
 
       <div className="footer-socials">
             <img src={whatsIcon} alt="website" />
@@ -16,7 +21,7 @@ function Footer() {
       </div>
 
       <p className="footer-copy">
-        All Rights Reserved © 2026 a
+        {copy}
       </p>
 
     </footer>
