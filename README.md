@@ -1,4 +1,3 @@
-https://www.figma.com/design/o6PHaJHsMuwfh7PNxjRqZt/Developer-Portfolio--Community-?node-id=203-671&t=WPyUmRAeY7v3Ds2p-1
 # Portfólio das Meninas 👩‍💻
 
 <table>
@@ -33,30 +32,16 @@ https://www.figma.com/design/o6PHaJHsMuwfh7PNxjRqZt/Developer-Portfolio--Communi
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Arquitetura](#-arquitetura)
-  - [Exemplos de diagramas](#exemplos-de-diagramas)
 - [Instalação e Execução](#-instalação-e-execução)
   - [Pré-requisitos](#pré-requisitos)
   - [Variáveis de Ambiente](#-variáveis-de-ambiente)
-     - [1 Back-end (Spring Boot)](#1-back-end-spring-boot)
-     - [2 Front-end (React, Vite)](#2-front-end-react-vite)
-     - [3 Exemplos de Variáveis de Ambiente na Vercel](#3-exemplos-de-variáveis-de-ambiente-na-vercel)
   - [Instalação de Dependências](#-instalação-de-dependências)
-    - [Front-end (React)](#front-end-react)
-    - [Back-end (Spring Boot)](#back-end-spring-boot)
-  - [Inicialização do Banco de Dados (PostgreSQL)](#-inicialização-do-banco-de-dados-postgresql)
   - [Como Executar a Aplicação](#-como-executar-a-aplicação)
-    - [Terminal 1: Back-end (Spring Boot)](#terminal-1-back-end-spring-boot)
-    - [Terminal 2: Front-end (React, Vite)](#terminal-2-front-end-react-vite)
-    - [Execução Local Completa com Docker Compose (Incluindo Banco de Dados)](#-execução-local-completa-com-docker-compose-incluindo-banco-de-dados)
-    - [Passos para build, inicialização e execução](#-passos-para-build-inicialização-e-execução)
 - [Deploy](#-deploy)
 - [Estrutura de Pastas](#-estrutura-de-pastas)
 - [Demonstração](#-demonstração)
   - [Aplicativo Mobile](#-aplicativo-mobile)
   - [Aplicação Web](#-aplicação-web)
-  - [Exemplo de saída no Terminal (para Back-end, API, CLI)](#-exemplo-de-saída-no-terminal-para-back-end-api-cli)
-- [Testes](#-testes)
 - [Documentações utilizadas](#-documentações-utilizadas)
 - [Autores](#-autores)
 - [Contribuição](#-contribuição)
@@ -96,153 +81,127 @@ O Portfólio das Meninas é uma plataforma web desenvolvida para atuar como uma 
 
 ## 🛠 Tecnologias Utilizadas
 
-As seguintes ferramentas, frameworks e bibliotecas foram utilizados na construção do Portfólio das Meninas. A seleção prioriza tecnologias modernas para garantir alta performance e um design responsivo.
+As seguintes tecnologias foram utilizadas no desenvolvimento do **Portfólio das Meninas**, com foco em organização de código, componentização e boas práticas no desenvolvimento front-end.
 
 ### 💻 Front-end
 
-* **Framework/Biblioteca:**
+- **Framework/Biblioteca:**
+  - React.js
+
+- **Ferramenta de desenvolvimento:**
+  - Vite
+
+- **Linguagens:**
+  - JavaScript (ES6+)
+  - HTML5
+  - CSS3
+
+- **Estilização:**
+  - CSS organizado em arquivos
+  - Uso de variáveis CSS para padronização visual
 
 ### 🖥️ Back-end
 
-* **Linguagem/Runtime:**
+Este projeto não possui back-end, sendo uma aplicação exclusivamente front-end.
 
-### 📱 Mobile (Opcional)
+### ⚙️ Ambiente de Desenvolvimento
 
-* **Framework:** 
-
-### ⚙️ Infraestrutura & DevOps
-
-* **Containerização:** 
-
----
-
-## 🏗 Arquitetura
-
-Descreva aqui a **arquitetura completa do sistema**, explicando como as camadas, módulos e componentes foram organizados. Informe também **por que** essa arquitetura foi escolhida e **quais problemas ela ajuda a resolver**.
-
-Você pode incluir:
-
-- **Visão geral da arquitetura** (ex.: camadas, módulos, microsserviços, monólito modular, hexagonal, MVC etc.)
-- **Principais componentes** e o papel de cada um
-- **Padrões de design adotados** (ex.: Repository, Service Layer, DTOs, Factory, Observer)
-- **Fluxo de dados** entre as partes do sistema
-- **Tecnologias utilizadas em cada camada**
-- **Decisões arquiteturais importantes**
-- **Trade-offs** ou limitações relevantes
+- Node.js
+- npm
+- Git
 
 ---
 
 ## 🔧 Instalação e Execução
 
+Esta seção descreve os passos necessários para configurar o ambiente, instalar as dependências e executar o projeto Portfólio das Meninas localmente.
+
 ### Pré-requisitos
-Certifique-se de que o usuário tenha o ambiente configurado.
+Antes de iniciar, certifique-se de que o ambiente possua:
+
+- Node.js (versão LTS recomendada)
+- npm (gerenciador de pacotes)
+- Um navegador web atualizado
 
 ---
 
 ### 🔑 Variáveis de Ambiente
-
----
-
-#### 3. Exemplos de Variáveis de Ambiente na Vercel
-
+Atualmente, o projeto não utiliza variáveis de ambiente.
+- Quando o deploy for realizado no Vercel, esta seção será atualizada.
+  
 ---
 
 ### 📦 Instalação de Dependências
+Após clonar o repositório, siga os passos abaixo no terminal:
+
+```
+cd codigo
+npm install
+```
+Esse comando irá instalar todas as dependências definidas no arquivo package.json.
 
 ---
 
 ### ⚡ Como Executar a Aplicação
+Para iniciar o servidor de desenvolvimento, execute:
+
+```
+npm run dev
+```
+Após a execução do comando, o terminal exibirá um link semelhante a:
+
+```
+http://localhost:5173
+```
+Clique no link exibido no terminal para visualizar a aplicação no navegador.
 
 ---
 
 #### 📦 Passos para build, inicialização e execução
+Para gerar a versão de produção do projeto, utilize o comando:
+
+```
+npm run build
+```
+Esse processo cria os arquivos otimizados para produção.
 
 ---
 
 ## 🚀 Deploy
-Instruções claras para deploy em produção.
+O deploy ainda não foi realizado.
+
+Está previsto que a aplicação seja publicada utilizando a plataforma Vercel, que oferece suporte nativo a projetos desenvolvidos com Vite + React.
 
 ---
 
 ## 📂 Estrutura de Pastas
 
-Descreva o propósito das pastas principais.
+A organização do projeto segue uma estrutura modular, facilitando a manutenção, reutilização de componentes e separação de responsabilidades.
 
 ```
 .
-├── .editorconfig                # ✍️ Padronização de estilo de código.
-├── .env.local                   # 🔒 Variáveis SENSÍVEIS do ambiente LOCAL (não versionado).
-├── .env.test                    # 🧪 Variáveis de ambiente para TESTES AUTOMATIZADOS.
-├── .env.staging                 # ☁️ Variáveis de ambiente para STAGING/HOMOLOGAÇÃO.
-├── .env.example                 # 🧩 Exemplo de TODAS as variáveis necessárias (sem valores sensíveis).
-├── .gitignore                   # 🧹 Ignora arquivos/pastas não versionadas (.env, node_modules, target, etc.).
-├── .vscode/                     # ⚙️ Configurações de ambiente da IDE (opcional).
-├── .github/                     # 🤖 CI/CD (Actions), templates de Issues e Pull Requests.
-├── README.md                    # 📘 Documentação principal do projeto.
-├── CONTRIBUTING.md              # 🤝 Guia de contribuição.
-├── LICENSE                      # ⚖️ Licença do projeto.
-├── docker-compose.yml           # 🐳 Orquestração dos containers (front/back/db/etc).
-├── docker-compose.override.yml  # 🐳 Configurações extras apenas para desenvolvimento.
-│
-├── /frontend                    # 📁 Aplicação React
-│   ├── .env.example             # 🧩 Variáveis de ambiente do Front-end.
-│   ├── Dockerfile               # 🐳 Docker build do Front-end.
-│   ├── .eslintrc.js             # ✨ Regras do ESLint.
-│   ├── .prettierrc              # 🎨 Configuração do Prettier.
-│   ├── /public                  # 📂 Arquivos estáticos e index.html.
-│   ├── /src                     # 📂 Código-fonte React
-│   │   ├── /components          # 🧱 Componentes reutilizáveis (UI).
-│   │   ├── /pages               # 📄 Páginas/rotas da aplicação.
-│   │   ├── /services            # 🔌 Serviços e chamadas HTTP.
-│   │   ├── /hooks               # 🎣 Hooks personalizados.
-│   │   ├── /styles              # 🎨 Estilos globais, temas, Design System.
-│   │   ├── /assets              # 🖼️ Recursos estáticos importados
-│   │   │   ├── /images          # 🖼️ Imagens.
-│   │   │   ├── /icons           # 💡 Ícones.
-│   │   │   └── /fonts           # ✒️ Fontes personalizadas.
-│   │   └── /utils               # 🛠️ Funções utilitárias.
-│   ├── package.json             # 📦 Dependências e scripts.
-│   └── yarn.lock / package-lock.json # 🔒 Lockfile das dependências.
-│
-├── /backend                     # 📁 Aplicação Spring Boot
-│   ├── .env.example             # 🧩 Variáveis de ambiente do Back-end.
-│   ├── Dockerfile               # 🐳 Docker build do Back-end.
-│   │
-│   ├── /src/main/java           # 📂 Código-fonte Java
-│   │   └── /com/exemplo/app
-│   │       ├── /controller      # 🎮 Endpoints REST.
-│   │       ├── /service         # ⚙️ Regras e lógica de negócio.
-│   │       ├── /repository      # 🗄️ Repositórios (JPA/Hibernate).
-│   │       ├── /model           # 🧬 Entidades persistentes (JPA).
-│   │       ├── /domain          # 🌐 Objetos de Domínio puro (sem anotações).
-│   │       ├── /dto             # ✉️ Data Transfer Objects.
-│   │       ├── /config          # 🔧 Configurações gerais (DB, Swagger, CORS, etc.).
-│   │       ├── /exception       # 💥 Exceptions e handlers globais.
-│   │       └── /security        # 🛡️ Autenticação e Autorização (Spring Security).
-│   │
-│   ├── /src/main/resources      # 📂 Recursos do Spring Boot
-│   │   ├── application.yml         # ⚙️ Configuração principal da aplicação
-│   │   ├── application-dev.yml     # 🧪 Configurações específicas do ambiente de DESENVOLVIMENTO
-│   │   ├── application-prod.yml    # 🚀 Configurações específicas para PRODUÇÃO
-│   │   ├── application-test.yml    # 🧪 Configurações usadas nos testes automatizados
-│   │   ├── /static                # 🌐 Arquivos estáticos (HTML/CSS/JS).
-│   │   ├── /templates             # 🖼️ Templates Thymeleaf/Freemarker.
-│   │   ├── /messages              # 🌎 Arquivos de internacionalização (i18n).
-│   │   └── /db                    # 💾 Scripts de banco usados pela aplicação
-│   │       └── /migration         # 📜 Migrações do banco (Flyway/Liquibase).
-│   │
-│   ├── /src/test/java            # 🧪 Testes unitários e de integração.
-│   └── pom.xml / build.gradle    # 🛠️ Build e dependências.
-│
-├── /scripts                      # 📜 Scripts de automação
-│   ├── dev.sh                    # 🚀 Ambiente de desenvolvimento completo.
-│   ├── build_all.sh              # 🛠️ Build geral (front + back).
-│   └── deploy.sh                 # ☁️ Deploy em produção/homologação.
-│
-├── /docs                         # 📚 Documentação, arquitetura, modelos C4, Swagger/OpenAPI.
-└── /tests                        # 🧪 Testes End-to-End (Cypress/Playwright).
+├── codigo/                          # 📁 Diretório principal do projeto
+│   ├── node_modules/                # 📦 Dependências instaladas pelo npm
+│   ├── public/                      # 🌐 Arquivos públicos
+│   │   └── vite.svg                 # ⚡ Ícone padrão do Vite
+│   ├── src/                         # 📂 Código-fonte da aplicação
+│   │   ├── assets/                  # 🖼️ Imagens e recursos estáticos
+│   │   ├── components/              # 🧩 Componentes da aplicação
+│   │   │   ├── layout/              # 🧱 Componentes de layout (Navbar, Footer)
+│   │   │   ├── sections/            # 📄 Seções principais da página
+│   │   │   └── ui/                  # 🎨 Componentes reutilizáveis de interface
+│   │   ├── styles/                  # 🎨 Estilos da aplicação
+│   │   │   ├── index.css            # 🌍 Estilos globais
+│   │   │   └── variavel.css         # 🎯 Variáveis CSS
+│   │   ├── App.jsx                  # 🚀 Componente raiz
+│   │   └── main.jsx                 # ⚡ Ponto de entrada do React
+│   ├── index.html                   # 📄 Arquivo HTML base
+│   ├── package.json                 # 📦 Dependências e scripts
+│   ├── package-lock.json            # 🔒 Lockfile das dependências
+│   └── vite.config.js               # ⚙️ Configuração do Vite
+├── .gitignore                       # 🧹 Arquivos ignorados pelo Git
+└── README.md                        # 📘 Documentação do projeto
 ```
-
 ---
 
 ## 🎥 Demonstração
@@ -256,19 +215,26 @@ Use GIFs e prints para mostrar o projeto em ação.
 
 ### 🌐 Aplicação Web
 
-### 💻 Exemplo de Saída no Terminal (para Back-end, API, CLI)
-
----
-
-## 🧪 Testes
-
 ---
 
 ## 🔗 Documentações utilizadas
 
-Liste aqui links para documentação técnica, referências de bibliotecas complexas ou guias de estilo que foram cruciais para o projeto.
+Esta seção reúne as principais documentações técnicas e referências que serviram de apoio durante o desenvolvimento do Portfólio das Meninas, auxiliando na implementação, organização do projeto e boas práticas de front-end.
 
-* 📖 **Framework/Biblioteca (Front-end):** [Documentação Oficial do **React**](https://react.dev/reference/react)
+* 📖 **Framework/Biblioteca (Front-end):**
+  * [Documentação Oficial do **React**](https://react.dev/reference/react)
+  * [Documentação Oficial do **Vite**](https://vitejs.dev/)
+
+* 🎨 **Estilização e Layout:**
+  * [Documentação Oficial do **CSS (MDN Web Docs)**](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+
+* 💻 **Linguagem e Ferramentas:**
+  * [Documentação Oficial do **JavaScript (MDN Web Docs)**](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+  * [Documentação Oficial do **npm**](https://docs.npmjs.com/)
+ 
+* ☁️ **Deploy:**
+  * [Documentação Oficial do **Vercel**](https://vercel.com/docs)
+
 ---
 
 ## 👥 Autores
@@ -311,10 +277,6 @@ Gostaria de agradecer aos seguintes canais e pessoas que foram fundamentais para
 Este projeto é distribuído sob a **[Licença MIT](https://github.com/joaopauloaramuni/laboratorio-de-desenvolvimento-de-software/blob/main/LICENSE)**.
 
 ---
-
-
-
-
 
 # React + Vite
 
