@@ -25,10 +25,19 @@ function About({ lang }) {
           {buttonLabel}
         </button>
       </div>
-      {/* Indicador de Scroll */}
-      <div className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce">
+      {/* Indicador de Scroll como botão */}
+      <button
+        type="button"
+        onClick={() => {
+          const nextSection = document.getElementById('projects')
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' })
+          }
+        }}
+        className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer focus:outline-none"
+      >
         <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
-      </div>
+      </button>
     </section>
   )
 }

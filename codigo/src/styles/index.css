@@ -29,7 +29,7 @@ html, body, #root {
 
 /*home - fim*/
 
-/*about - inicio*/
+/* about - inicio */
 .about {
   display: flex;
   align-items: center;
@@ -39,12 +39,23 @@ html, body, #root {
   background-color: #f3e9f7;
   position: relative;
   z-index: 2;
-
+  
+  /* Faz a seção ocupar toda a altura da tela, empurrando o 'projects' para baixo */
+  min-height: 100vh; 
+  box-sizing: border-box;
 }
 
 .about-image img {
   width: 350px;
+  border-radius: 24px; /* Arredonda os cantos da imagem (use 50% se quiser um círculo perfeito) */
+  box-shadow: 0 10px 30px rgba(122, 44, 143, 0.15); /* Adiciona uma sombra suave usando o seu tom de roxo */
   transform: rotate(-3deg);
+  transition: transform 0.3s ease; /* Prepara a imagem para uma animação suave */
+}
+
+/* Efeito interativo quando passar o mouse na foto */
+.about-image img:hover {
+  transform: rotate(0deg) scale(1.02); 
 }
 
 .about-content {
@@ -54,15 +65,35 @@ html, body, #root {
 .about-content h2 {
   color: #7a2c8f;
   margin-bottom: 20px;
+  font-size: 2.5rem; /* Aumenta o peso do título */
 }
 
 .about-content p {
-  color: #a020c0;
+  color: #4a4a4a; /* Cinza escuro no lugar do roxo vibrante para descansar a leitura */
   line-height: 1.8;
+  font-size: 1.1rem;
   margin-bottom: 30px;
 }
 
-/*about - fim*/
+/* Transformando o texto do CV em um botão real e clicável */
+.cv-button {
+  background-color: #7a2c8f;
+  color: #ffffff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(122, 44, 143, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #5c206d; /* Escurece um pouco o roxo */
+  transform: translateY(-2px); /* Efeito de flutuação ao passar o mouse */
+}
+/* about - fim */
 
 /*skills - inicio*/
 .skills {
