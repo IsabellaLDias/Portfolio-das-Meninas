@@ -206,14 +206,11 @@ A organização do projeto segue uma estrutura modular, facilitando a manutenç�
 
 ## 🎥 Demonstração
 
-Use GIFs e prints para mostrar o projeto em ação.  
-
-> [!WARNING]
-> Dê preferência a hospedar suas imagens em um **CDN** (Content Delivery Network) ou no **GitHub Pages** para garantir que elas carreguem rapidamente e não quebrem. Saiba mais sobre o GitHub Pages clicando [aqui](https://github.com/joaopauloaramuni/joaopauloaramuni.github.io).
-
 ### 📱 Aplicativo Mobile
+<img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/Aplica%C3%A7%C3%A3o%20Mobile%20-%20Portfolio%20das%20Meninas.gif?raw=true" width="300">
 
 ### 🌐 Aplicação Web
+<img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/Aplica%C3%A7%C3%A3o%20Web%20-%20Portfolio%20das%20Meninas.gif?raw=true" width="300">
 
 ---
 
@@ -242,7 +239,7 @@ Liste os principais contribuidores. Você pode usar links para seus perfis.
 
 | 👤 Nome | 🖼️ Foto | :octocat: GitHub | 💼 LinkedIn | 📤 Gmail |
 |---------|----------|-----------------|-------------|-----------|
-| Isabella Luiza Dias dos Santos  | <div align="center"><img src="https://joaopauloaramuni.github.io/image/aramunilogo.png" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/IsabellaLDias"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/isabella-dias-s/"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="isabellamg2017@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
+| Isabella Luiza Dias dos Santos  | <div align="center"><img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/1733095978637.jpg?raw=true" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/IsabellaLDias"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/isabella-dias-s/"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="isabellamg2017@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
 | Nome 2  | <div align="center"><img src="https://joaopauloaramuni.github.io/image/aramunilogo.png" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/user2"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/user2"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:user2@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
 
 > [!TIP]
