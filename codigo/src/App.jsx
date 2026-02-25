@@ -13,7 +13,7 @@ function App() {
 
   return (
     // O main envolve o conteúdo
-    <main className="relative bg-lavender-main min-h-screen w-fulle">
+    <main className="relative bg-lavender-main min-h-screen w-full">
       <Navbar lang={lang} setLang={setLang} />
       <Home lang={lang} />
       <About lang={lang} />

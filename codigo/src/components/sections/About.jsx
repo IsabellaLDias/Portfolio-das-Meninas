@@ -3,8 +3,8 @@ import profile from "../../assets/images/profile.png";
 function About({ lang }) {
   const title = lang === 'pt' ? 'Sobre mim' : 'About Me'
   const text = lang === 'pt'
-    ? 'Estudante de Engenharia de Computação, curiosa e apaixonada por desenvolvimento, liderança e colaboração.'
-    : 'An inquisitive Computer Science Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.'
+    ? 'Estudante de Engenharia de Software, inquisitiva e com habilidades de liderança, buscando aplicar sólidos conhecimentos de desenvolvimento com foco em colaboração, comunicação e paixão.'
+    : 'An inquisitive Software Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.'
   const buttonLabel = lang === 'pt' ? 'Baixar CV' : 'Download CV'
 
   return (

@@ -30,6 +30,10 @@ function Projects({ lang }) {
     setIndex((prev) => (prev + 1) % projects.length)
   }
 
+  function prevProject() {
+    setIndex((prev) => (prev - 1 + projects.length) % projects.length)
+  }
+
   const project = projects[index]
 
   return (
@@ -51,12 +55,16 @@ function Projects({ lang }) {
           ))}
         </div>
 
-        <button className="next-btn" onClick={nextProject}>
-          →
-        </button>
-
-        <div className="project-number">
-          {String(index + 1).padStart(2, "0")}
+        <div className="project-controls">
+          <button className="prev-btn" onClick={prevProject}>
+            ←
+          </button>
+          <button className="next-btn" onClick={nextProject}>
+            →
+          </button>
+          <span className="project-number">
+            {String(index + 1).padStart(2, "0")}
+          </span>
         </div>
       </div>
       {/* Indicador de Scroll como botão */}

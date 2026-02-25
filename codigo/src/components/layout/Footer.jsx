@@ -9,8 +9,6 @@ function Footer({ lang }) {
   return (
     <footer className="footer">
 
-      <h3 className="footer-name">{name}</h3>
-
       <div className="footer-socials">
             <a href="https://github.com/SEU_USUARIO" 
                target="_blank" 
