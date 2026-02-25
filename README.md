@@ -208,6 +208,9 @@ A organização do projeto segue uma estrutura modular, facilitando a manutenç�
 
 ## 🎥 Demonstração
 
+### 🖼️ Wireframes (Figma)
+<img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/Wireframe%20-%20Portfolio%20das%20Meninas.jpg?raw=true" width="300">
+
 ### 📱 Aplicativo Mobile
 <img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/Aplica%C3%A7%C3%A3o%20Mobile%20-%20Portfolio%20das%20Meninas.gif?raw=true" width="300">
 
@@ -243,6 +246,7 @@ Liste os principais contribuidores. Você pode usar links para seus perfis.
 |---------|----------|-----------------|-------------|-----------|
 | Isabella Luiza Dias dos Santos  | <div align="center"><img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/1733095978637.jpg?raw=true" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/IsabellaLDias"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/isabella-dias-s/"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="isabellamg2017@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
 | Sofia Vasconcelos Moreira e Silva  | <div align="center"><img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/imagemSo.jpeg" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/sofiavasconcelosms"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/sofia-vasconcelos-a360b7327/"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="sofiavasconcelosmsilva@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
+| Maria Clara Gomes Silva de Oliveira  | <div align="center"><img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/EUEUEUEU.jpg" width="70px" height="70px"></div> | <div align="center"><a href="https://github.com/mariaoliveira27"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/maria-clara-gomes-01b64b16a/"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mariacariagomes@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
 
 > [!TIP]
 > 💡 **Dica:** Escolha uma foto profissional, preferencialmente de rosto, evitando imagens com baixa qualidade, filtros excessivos ou elementos distrativos.
