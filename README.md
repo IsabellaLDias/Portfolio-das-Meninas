@@ -208,6 +208,9 @@ A organização do projeto segue uma estrutura modular, facilitando a manutenç�
 
 ## 🎥 Demonstração
 
+### 🖼️ Wireframes (Figma)
+<img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/Wireframe%20-%20Portfolio%20das%20Meninas.jpg?raw=true" width="300">
+
 ### 📱 Aplicativo Mobile
 <img src="https://github.com/IsabellaLDias/Portfolio-das-Meninas/blob/main/images/Aplica%C3%A7%C3%A3o%20Mobile%20-%20Portfolio%20das%20Meninas.gif?raw=true" width="300">
 
