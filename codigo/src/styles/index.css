@@ -478,10 +478,25 @@ section[id] {
   color: #4A2c4A;
   font-weight: 500;
   margin-right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .language span {
   cursor: pointer;
+}
+
+.language-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #4A2c4A; /* mesma cor dos links do header */
+}
+
+.language-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .nav-links {

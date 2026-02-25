@@ -5,7 +5,7 @@ function About({ lang }) {
   const text = lang === 'pt'
     ? 'Estudante de Engenharia de Software, inquisitiva e com habilidades de liderança, buscando aplicar sólidos conhecimentos de desenvolvimento com foco em colaboração, comunicação e paixão.'
     : 'An inquisitive Software Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.'
-  const buttonLabel = lang === 'pt' ? 'Baixar CV' : 'Download CV'
+  const buttonLabel = lang === 'pt' ? 'Visualizar CV' : 'Download CV'
 
   return (
     <section id="about" className="about">
