@@ -4,6 +4,7 @@ import Home from './components/sections/Home'
 import About from './components/sections/About'
 import Projects from './components/sections/Projects'
 import Skills from './components/sections/Skills'
+import LivroVisitas from './components/sections/LivroVisitas'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 
@@ -19,6 +20,7 @@ function App() {
       <About lang={lang} />
       <Projects lang={lang} />
       <Skills lang={lang} />
+      <LivroVisitas lang={lang} />
       <Contact lang={lang} />
       <Footer lang={lang} />
       {/* <Navbar />  <--- IMPORTANTE: Comente esta linha também! */}
