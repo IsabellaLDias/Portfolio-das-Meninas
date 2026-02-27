@@ -282,6 +282,62 @@ section[id] {
 }
 /*projects - fim*/
 
+/*livro vista - inicio*/
+
+
+.guestbook-section {
+  display: flex;
+  gap: 60px;
+  padding: 80px 10%;
+  
+}
+
+.project-content h2 {
+  color: #7a2c8f;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.guestbook-left {
+  flex: 1;
+}
+
+.guestbook-right {
+  flex: 1;
+}
+
+.guestbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.guestbook-form button {
+  padding: 12px;
+  background: #b57edc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.guestbook-card {
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  margin-bottom: 15px;
+}
+
+/*livro vista - fim*/
+
 /* contact - inicio */
 
 .contact {

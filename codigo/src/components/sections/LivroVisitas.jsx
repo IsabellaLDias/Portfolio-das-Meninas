@@ -1,31 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { supabase } from "../lib/supabase";
 import emailjs from "emailjs-com";
 
-const LivroVisitas = ({ mode = "home", onExit }) => {
-  const { t } = useTranslation();
+const LivroVisitas = ({ lang }) => {
+
+  // 🌍 TEXTOS (igual Contact)
+  const title = lang === 'pt' ? 'Livro de Visitas' : 'Guestbook';
+  const placeholderName = lang === 'pt' ? 'Nome' : 'Name';
+  const placeholderMessage = lang === 'pt' ? 'Mensagem' : 'Message';
+  const buttonLabel = lang === 'pt' ? 'Enviar' : 'Send';
+  const showLabel = lang === 'pt' ? 'Ver mensagens' : 'View messages';
+  const hideLabel = lang === 'pt' ? 'Ocultar mensagens' : 'Hide messages';
 
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showMessages, setShowMessages] = useState(false);
 
-  // CLI states
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [step, setStep] = useState("name");
 
-  useEffect(() => {
-    if (mode === "list") {
-      fetchMessages();
-    }
-
-    if (mode === "add") {
-      setName("");
-      setMessage("");
-      setStep("name");
-    }
-  }, [mode]);
-
+  // 🔄 Buscar mensagens
   async function fetchMessages() {
     setLoading(true);
 
@@ -43,11 +37,13 @@ const LivroVisitas = ({ mode = "home", onExit }) => {
     setLoading(false);
   }
 
-  async function handleSubmit() {
+  // 📩 Enviar mensagem
+  async function handleSubmit(e) {
+    e.preventDefault();
+
     const now = new Date();
     const time = now.toLocaleString();
 
-    // Salva no Supabase
     const { error } = await supabase
       .from("guestbook_messages")
       .insert([{ name, message }]);
@@ -57,216 +53,92 @@ const LivroVisitas = ({ mode = "home", onExit }) => {
       return;
     }
 
-    // Envia email notificando novo registro
-    emailjs
-      .send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID_FOR_ME,
-        {
-          name: name,
-          email: "",
-          message: `[guestbook add] ${message}`,
-          title: `Nova mensagem registrada no guestbook por: ${name}`,
-          time: time,
-        },
-        EMAILJS_CONFIG.PUBLIC_KEY
-      )
-      .then(
-        () => {
-          console.log("Email do guestbook enviado com sucesso!");
-        },
-        (err) => {
-          console.error("Erro ao enviar email do guestbook:", err);
-        }
-      );
+    // 📧 Email notification
+    const serviceID = 'service_hj8348s';
+    const templateID = 'template_g4mwunn';
+    const publicKey = '9EbzCaeAM6iAyqmH4';
 
-    // Atualiza UI
-    setStep("done");
-    fetchMessages();
+    emailjs.send(
+      serviceID,
+      templateID,
+      {
+        name: name,
+        email: "guestbook@portfolio.com",
+        message: message,
+        title: `Nova mensagem no guestbook`,
+        time: time,
+      },
+      publicKey
+    );
+
+    // limpa campos
+    setName("");
+    setMessage("");
   }
 
   return (
-    <div className="guestbook-container">
-      <div className="guestbook-header">
-        <h2 className="guestbook-title">{t("guestbook.titulo")}</h2>
-        <p className="guestbook-subtitle">
-          {t("guestbook.subtitulo")}
-        </p>
+    <section className="guestbook-section">
+
+      <div className="guestbook-left">
+        <h2>{title}</h2>
       </div>
 
-      {/* HOME */}
-      {mode === "home" && (
-        <div className="guestbook-commands">
-          <p className="cli-hint">{t("guestbook.hint")}</p>
+      <div className="guestbook-right">
 
-          <p className="command-line">
-            <span className="command">guestbook list</span>
-            <span className="command-desc">
-              → {t("guestbook.listar")}
-            </span>
-          </p>
+        <form
+          className="guestbook-form"
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="text"
+            placeholder={placeholderName}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-          <p className="command-line">
-            <span className="command">guestbook add</span>
-            <span className="command-desc">
-              → {t("guestbook.adicionar")}
-            </span>
-          </p>
+          <textarea
+            placeholder={placeholderMessage}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
 
-          <p className="command-line">
-            <span className="command">guestbook help</span>
-            <span className="command-desc">
-              → {t("guestbook.ajuda")}
-            </span>
-          </p>
-        </div>
-      )}
+          <button type="submit">
+            {buttonLabel}
+          </button>
+        </form>
 
-      {/* LIST */}
-      {mode === "list" && (
-        <div className="guestbook-messages">
-          {loading ? (
-            <p className="cli-hint">
-              {t("guestbook.carregando")}
-            </p>
-          ) : messages.length === 0 ? (
-            <p className="cli-hint">
-              {t("guestbook.vazio")}
-            </p>
-          ) : (
-            messages.map((msg) => (
-              <div key={msg.id} className="guestbook-entry">
-                <p className="guestbook-name">
-                  {msg.name} —{" "}
+        {/* 🔘 BOTÃO PARA MOSTRAR / OCULTAR */}
+        <button
+          className="guestbook-toggle-btn"
+          onClick={() => {
+            if (!showMessages) fetchMessages();
+            setShowMessages(!showMessages);
+          }}
+        >
+          {showMessages ? hideLabel : showLabel}
+        </button>
+
+        {/* 📜 LISTA DE MENSAGENS */}
+        {showMessages && (
+          <div className="guestbook-messages">
+            {loading && <p>Loading...</p>}
+
+            {messages.map((msg) => (
+              <div key={msg.id} className="guestbook-card">
+                <strong>{msg.name}</strong>
+                <span>
                   {new Date(msg.created_at).toLocaleDateString()}
-                </p>
-                <p className="guestbook-message">
-                  {msg.message}
-                </p>
+                </span>
+                <p>{msg.message}</p>
               </div>
-            ))
-          )}
-        </div>
-      )}
-
-      {/* ADD - CLI */}
-      {mode === "add" && (
-        <div className="guestbook-cli-add">
-          {step === "name" && (
-            <>
-              <p className="cli-hint">{t("guestbook.nome_label")}:</p>
-              <div className="cli-input-line">
-                <span className="cli-prefix">&gt;</span>
-                <input
-                  className="cli-input"
-                  type="text"
-                  value={name}
-                  autoFocus
-                  onChange={(e) => setName(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && name.trim()) {
-                      setStep("message");
-                    }
-                  }}
-                />
-              </div>
-            </>
-          )}
-
-          {step === "message" && (
-            <>
-              <p className="cli-hint">{t("guestbook.mensagem_label")}:</p>
-              <div className="cli-input-line">
-                <span className="cli-prefix">&gt;</span>
-                <input
-                  className="cli-input"
-                  type="text"
-                  value={message}
-                  autoFocus
-                  onChange={(e) => setMessage(e.target.value)}
-                  onKeyDown={async (e) => {
-                    if (e.key === "Enter" && message.trim()) {
-                      await handleSubmit();
-                    }
-                  }}
-                />
-              </div>
-            </>
-          )}
-
-          {step === "done" && (
-            <p className="cli-success">{t("guestbook.sucesso")}</p>
-          )}
-
-          <br />
-          
-          {onExit && (
-            <button
-              className="btn-voltar-terminal"
-              onClick={onExit}>
-              {t("guestbook.voltar_terminal")}
-            </button>
-          )}
-        </div>
-      )}
-
-      {/* HELP */}
-      {mode === "help" && (
-        <div className="guestbook-commands">
-          <p className="cli-hint">{t("guestbook.uso")}</p>
-
-          <p className="command-line">
-            <span className="command">guestbook</span>
-            <span className="command-desc">
-              → {t("guestbook.descricao")}
-            </span>
-          </p>
-
-          <p className="command-line">
-            <span className="command">guestbook list</span>
-            <span className="command-desc">
-              → {t("guestbook.listar")}
-            </span>
-          </p>
-
-          <p className="command-line">
-            <span className="command">guestbook add</span>
-            <span className="command-desc">
-              → {t("guestbook.adicionar")}
-            </span>
-          </p>
-
-          <p className="command-line">
-            <span className="command">guestbook help</span>
-            <span className="command-desc">
-              → {t("guestbook.ajuda")}
-            </span>
-          </p>
-
-          <br />
-
-          <p className="cli-hint">{t("guestbook.exemplo_list")}</p>
-
-          <p className="command-line">
-            <span className="command">guestbook list</span>
-          </p>
-
-          <br />
-
-          <p className="cli-hint">{t("guestbook.exemplo_add")}</p>
-
-          <div className="guestbook-entry">
-            <p className="guestbook-name">&gt; guestbook add</p>
-            <p className="guestbook-message">
-              &gt; {t("guestbook.nome_label")}: {t("guestbook.example_name")}
-            </p>
-            <p className="guestbook-message">
-              &gt; {t("guestbook.mensagem_label")}: {t("guestbook.example_message")}
-            </p>
+            ))}
           </div>
-        </div>
-      )}
-    </div>
+        )}
+
+      </div>
+    </section>
   );
 };
 

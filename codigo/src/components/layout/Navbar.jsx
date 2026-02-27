@@ -41,6 +41,7 @@ function Navbar({ lang, setLang }) {
         <li><a href="#about">{lang === 'pt' ? 'Sobre' : 'About'}</a></li>
         <li><a href="#projects">{lang === 'pt' ? 'Projetos' : 'Projects'}</a></li>
         <li><a href="#skills">{lang === 'pt' ? 'Habilidades' : 'Skills'}</a></li>
+        <li><a href="#guestbook">{lang === 'pt' ? 'Livro de visitas' : 'LivroVisitas'}</a></li>
         <li><a href="#contact">{lang === 'pt' ? 'Contato' : 'Contact'}</a></li>
       </ul>
     </nav>
