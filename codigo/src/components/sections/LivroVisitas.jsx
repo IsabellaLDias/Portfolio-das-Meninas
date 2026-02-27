@@ -4,7 +4,7 @@ import emailjs from "emailjs-com";
 
 const LivroVisitas = ({ lang }) => {
 
-  // 🌍 TEXTOS (igual Contact)
+  // TEXTOS (igual Contact)
   const title = lang === 'pt' ? 'Livro de Visitas' : 'Guestbook';
   const placeholderName = lang === 'pt' ? 'Nome' : 'Name';
   const placeholderMessage = lang === 'pt' ? 'Mensagem' : 'Message';
@@ -19,7 +19,7 @@ const LivroVisitas = ({ lang }) => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  // 🔄 Buscar mensagens
+  //  Buscar mensagens
   async function fetchMessages() {
     setLoading(true);
 
@@ -37,7 +37,7 @@ const LivroVisitas = ({ lang }) => {
     setLoading(false);
   }
 
-  // 📩 Enviar mensagem
+  //Enviar mensagem
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -53,7 +53,7 @@ const LivroVisitas = ({ lang }) => {
       return;
     }
 
-    // 📧 Email notification
+    //Email notification
     const serviceID = 'service_hj8348s';
     const templateID = 'template_g4mwunn';
     const publicKey = '9EbzCaeAM6iAyqmH4';
@@ -109,7 +109,7 @@ const LivroVisitas = ({ lang }) => {
           </button>
         </form>
 
-        {/* 🔘 BOTÃO PARA MOSTRAR / OCULTAR */}
+        {/* BOTÃO PARA MOSTRAR / OCULTAR */}
         <button
           className="guestbook-toggle-btn"
           onClick={() => {
@@ -120,7 +120,7 @@ const LivroVisitas = ({ lang }) => {
           {showMessages ? hideLabel : showLabel}
         </button>
 
-        {/* 📜 LISTA DE MENSAGENS */}
+        {/* LISTA DE MENSAGENS */}
         {showMessages && (
           <div className="guestbook-messages">
             {loading && <p>Loading...</p>}
