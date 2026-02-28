@@ -1,4 +1,43 @@
+import { useEffect, useState } from 'react'
+
 function Navbar({ lang, setLang }) {
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    const sectionIds = ['home', 'about', 'projects', 'skills', 'guestbook', 'contact']
+    const navbarOffset = 80
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + navbarOffset
+      let current = 'home'
+
+      sectionIds.forEach((id) => {
+        const element = document.getElementById(id)
+        if (element && scrollPosition >= element.offsetTop) {
+          current = id
+        }
+      })
+
+      setActiveSection((prev) => (prev !== current ? current : prev))
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const handleNavClick = (id) => (event) => {
+    event.preventDefault()
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    setActiveSection(id)
+  }
+
   return (
     <nav className="navbar">
       <div className="language">
@@ -37,12 +76,36 @@ function Navbar({ lang, setLang }) {
       </div>
 
       <ul className="nav-links">
-        <li className="active"><a href="#home">{lang === 'pt' ? 'Início' : 'Home'}</a></li>
-        <li><a href="#about">{lang === 'pt' ? 'Sobre' : 'About'}</a></li>
-        <li><a href="#projects">{lang === 'pt' ? 'Projetos' : 'Projects'}</a></li>
-        <li><a href="#skills">{lang === 'pt' ? 'Habilidades' : 'Skills'}</a></li>
-        <li><a href="#guestbook">{lang === 'pt' ? 'Livro de visitas' : 'LivroVisitas'}</a></li>
-        <li><a href="#contact">{lang === 'pt' ? 'Contato' : 'Contact'}</a></li>
+        <li className={activeSection === 'home' ? 'active' : ''}>
+          <a href="#home" onClick={handleNavClick('home')}>
+            {lang === 'pt' ? 'Início' : 'Home'}
+          </a>
+        </li>
+        <li className={activeSection === 'about' ? 'active' : ''}>
+          <a href="#about" onClick={handleNavClick('about')}>
+            {lang === 'pt' ? 'Sobre' : 'About'}
+          </a>
+        </li>
+        <li className={activeSection === 'projects' ? 'active' : ''}>
+          <a href="#projects" onClick={handleNavClick('projects')}>
+            {lang === 'pt' ? 'Projetos' : 'Projects'}
+          </a>
+        </li>
+        <li className={activeSection === 'skills' ? 'active' : ''}>
+          <a href="#skills" onClick={handleNavClick('skills')}>
+            {lang === 'pt' ? 'Habilidades' : 'Skills'}
+          </a>
+        </li>
+        <li className={activeSection === 'guestbook' ? 'active' : ''}>
+          <a href="#guestbook" onClick={handleNavClick('guestbook')}>
+            {lang === 'pt' ? 'Livro de visitas' : 'Guestbook'}
+          </a>
+        </li>
+        <li className={activeSection === 'contact' ? 'active' : ''}>
+          <a href="#contact" onClick={handleNavClick('contact')}>
+            {lang === 'pt' ? 'Contato' : 'Contact'}
+          </a>
+        </li>
       </ul>
     </nav>
   )

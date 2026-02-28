@@ -77,7 +77,7 @@ const LivroVisitas = ({ lang }) => {
   }
 
   return (
-    <section className="guestbook-section">
+    <section id="guestbook" className="guestbook-section">
 
       <div className="guestbook-left">
         <h2>{title}</h2>
