@@ -109,6 +109,33 @@ section[id] {
   background-color: #5c206d; /* Escurece um pouco o roxo */
   transform: translateY(-2px); /* Efeito de flutuação ao passar o mouse */
 }
+/* container do currículo (viewer de PDF) */
+.curriculo-container {
+  margin-top: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(74, 44, 74, 0.12);
+  max-width: 800px;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.curriculo-container .rpv-core__viewer {
+  height: 500px;
+}
+
+.curriculo-container.loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.spinner {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #7a2c8f;
+  font-weight: 500;
+}
 /* about - fim */
 
 /*skills - inicio*/

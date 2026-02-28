@@ -12,6 +12,8 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@supabase/supabase-js": "^2.98.0",
+    "@react-pdf-viewer/core": "^3.0.0",
+    "@react-pdf-viewer/default-layout": "^3.0.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.34.2",
     "i18next": "^25.8.13",
