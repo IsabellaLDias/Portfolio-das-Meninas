@@ -36,9 +36,9 @@ function Skills({ lang }) {
             name,
             percent: Math.round((value / totalBytes) * 100)
           }))
-          .filter(skill => skill.percent > 1) 
+          .filter(skill => skill.percent > 0.1) 
           .sort((a, b) => b.percent - a.percent)
-          .slice(0, 8); 
+          .slice(0, 12); 
 
         // CORREÇÃO: Nome da função deve ser o mesmo do useState
         setSkillsData(formattedSkills);
