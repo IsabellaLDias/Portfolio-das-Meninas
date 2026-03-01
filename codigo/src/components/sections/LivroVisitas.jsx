@@ -4,8 +4,9 @@ import emailjs from "emailjs-com";
 
 const LivroVisitas = ({ lang }) => {
 
-  // TEXTOS (igual Contact)
+  // TEXTOS 
   const title = lang === 'pt' ? 'Livro de Visitas' : 'Guestbook';
+  const text = lang === 'pt' ? 'Deixe uma mensagem para mim!' : 'Leave a message for me!';
   const placeholderName = lang === 'pt' ? 'Nome' : 'Name';
   const placeholderMessage = lang === 'pt' ? 'Mensagem' : 'Message';
   const buttonLabel = lang === 'pt' ? 'Enviar' : 'Send';
@@ -53,7 +54,7 @@ const LivroVisitas = ({ lang }) => {
       return;
     }
 
-    //Email notification
+    // notificação Email 
     const serviceID = 'service_hj8348s';
     const templateID = 'template_g4mwunn';
     const publicKey = '9EbzCaeAM6iAyqmH4';
@@ -77,10 +78,11 @@ const LivroVisitas = ({ lang }) => {
   }
 
   return (
-    <section id="guestbook" className="guestbook-section">
+    <section id="guestbook" className="guestbook-section relative">
 
       <div className="guestbook-left">
         <h2>{title}</h2>
+        <p>{text}</p>
       </div>
 
       <div className="guestbook-right">
@@ -123,7 +125,7 @@ const LivroVisitas = ({ lang }) => {
         {/* LISTA DE MENSAGENS */}
         {showMessages && (
           <div className="guestbook-messages">
-            {loading && <p>Loading...</p>}
+            {loading && <p>Carregando...</p>}
 
             {messages.map((msg) => (
               <div key={msg.id} className="guestbook-card">
@@ -138,6 +140,18 @@ const LivroVisitas = ({ lang }) => {
         )}
 
       </div>
+
+      <button
+        type="button"
+        onClick={() =>
+          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+        }
+        className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer focus:outline-none"
+      >
+        <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
+      </button>
+
+
     </section>
   );
 };

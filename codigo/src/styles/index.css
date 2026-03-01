@@ -315,14 +315,19 @@ section[id] {
 .guestbook-section {
   display: flex;
   gap: 60px;
-  padding: 80px 10%;
-  
+  padding: 80px 80px;
+  background: #ffffff;
 }
 
-.project-content h2 {
-  color: #7a2c8f;
-  margin-bottom: 20px;
+.guestbook-left h2 {
   font-size: 2.5rem;
+  color: #7a2c8f;
+}
+
+.guestbook-left p {
+  color: #a020c0;
+  line-height: 1.8;
+  margin-top: 40px;
 }
 
 .guestbook-left {
@@ -373,7 +378,8 @@ section[id] {
   align-items: flex-start;
   padding: 80px 80px;
   gap: 56px;
-  background: #fdf7ff;
+  /*background: #fdf7ff;*/
+   background: #f8f2fa;
 }
 
 .contact-left {
@@ -449,6 +455,7 @@ section[id] {
   .about,
   .skills,
   .projects,
+  .guestbook,
   .contact {
     padding: 80px 40px;
     gap: 40px;
