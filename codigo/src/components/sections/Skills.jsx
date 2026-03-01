@@ -84,7 +84,7 @@ function Skills({ lang }) {
 
       <button
         type="button"
-        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+        onClick={() => document.getElementById('guestbook')?.scrollIntoView({ behavior: 'smooth' })}
         className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer focus:outline-none"
       >
         <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
