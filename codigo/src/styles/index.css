@@ -57,7 +57,7 @@ section[id] {
   padding: 96px 80px;
   background-color: #f3e9f7;
   position: relative;
-  z-index: 2;
+  z-index: 25;
   box-sizing: border-box;
 }
 
@@ -516,6 +516,15 @@ section[id] {
     gap: 32px;
   }
 
+  /* Garante que Contact e Guestbook ocupem toda a largura no mobile,
+     empilhando exatamente da mesma forma */
+  .guestbook-left,
+  .guestbook-right,
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
   .about-image img,
   .skills-image img,
   .project-image img {
@@ -715,12 +724,15 @@ section[id] {
   }
 
   .nav-links {
-    gap: 12px;
     flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 8px; /* espaço vertical entre linhas do menu */
   }
 
   .nav-links li {
     font-size: 12px;
+    padding-top: 4px;   /* espaço acima */
+    padding-bottom: 4px;/* espaço abaixo */
   }
 }
 

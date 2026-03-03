@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 const Home = ({ lang }) => {
   return (
-    <section id="home" className="relative w-full h-screen bg-lavender-main overflow-hidden flex items-center">
+    <section id="home" className="relative w-full h-screen bg-lavender-main flex items-center">
 
       {/* --- 1. Camada de Fundo (Texto GRUNGE Gigante) --- */}
       {/* O select-none impede que o usuário selecione esse texto de fundo */}
@@ -85,12 +85,15 @@ const Home = ({ lang }) => {
 
 
       {/* --- 3D Spline (Lado Direito) --- */}
-      <div className="hidden md:flex absolute right-0 top-18 h-full w-[45%] z-20 flex items-center pointer-events-none">
-        <iframe src='https://my.spline.design/miniroomartcopy-QaFR5Dmkgy0LIKyrxHerdd3c/' 
-        frameborder='0' 
-        width='100%' 
-        height='100%'
-        ></iframe>
+      <div className="hidden md:flex absolute right-0 top-0 bottom-0 w-[45%] z-20 flex items-center pointer-events-none overflow-hidden">
+        <spline-viewer
+          className="w-full h-full"
+          style={{
+            transform: 'scale(1.05) translateY(48px)',
+            transformOrigin: 'center top',
+          }}
+          url="https://prod.spline.design/zC5wrcmJ1X5bWaZw/scene.splinecode"
+        ></spline-viewer>
       </div>
 
       {/* Indicador de Scroll como botão */}
