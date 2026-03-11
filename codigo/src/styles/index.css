@@ -180,14 +180,14 @@ section[id] {
 .skills {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 96px 80px;
   background: #f8f2fa;
   gap: 56px;
 }
 
 .skills-left {
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .skills-left h2 {
@@ -199,37 +199,42 @@ section[id] {
 .skills-left p {
   color: #a020c0;
   line-height: 1.8;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
+}
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  color: #7a2c8f;
+  margin: 16px 0 12px;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 .skill-item {
   text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 10px;
+  box-shadow: 0 8px 20px rgba(122, 44, 143, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
+.skill-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #f3e9f7;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.inner {
-  width: 65px;
-  height: 65px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
   color: #7a2c8f;
 }
 
@@ -239,12 +244,45 @@ section[id] {
   color: #7a2c8f;
 }
 
+.skills-grid-product {
+  margin-top: 12px;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards em cima e 2 embaixo */
+}
+
+.skill-item-product {
+  /* usa o mesmo estilo base de .skill-item para ficar igual às tecnologias */
+}
+
+.skill-icon-product {
+  /* só ajusta a tipografia dentro do mesmo círculo dos ícones de tecnologia */
+  width: 52px;
+  height: 52px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.skill-item-product p {
+  color: #7a2c8f;
+  font-size: 14px;
+}
+
 .skills-image img {
   width: 350px;
   transform: rotate(3deg);
 }
 
 /*skills - fim*/
+
+.skills-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 460px;
+  margin-top: 144px; /* desce mais a coluna de gestão para alinhar com "Languages & Technologies" */
+}
 
 
 /*projects - inicio*/
@@ -259,7 +297,7 @@ section[id] {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  min-height: 460px;
+  height: 480px; /* altura fixa para evitar "pulos" ao trocar de projeto */
 }
 
 .project-image,
@@ -270,20 +308,33 @@ section[id] {
 .project-image {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .project-image img {
-  width: 440px;
+  width: 540px;
   max-width: 100%;
-  height: 280px;
-  object-fit: contain;
+  height: 320px;
+  object-fit: cover;
   display: block;
-  transform: rotate(-3deg);
-  transition: 0.5s ease;
+  transform: none; /* deixa o GIF reto/alinhado */
+  transition: 0.3s ease;
 }
 
 .project-content {
   max-width: 500px;
+}
+
+.project-period {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.project-text {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .project-content h2 {
@@ -321,14 +372,15 @@ section[id] {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: 16px; /* espaço entre o link do GitHub e as setas */
 }
 
 .next-btn,
 .prev-btn {
   background: #b57edc;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   color: white;
   font-size: 20px;
@@ -350,63 +402,87 @@ section[id] {
 /*livro vista - inicio*/
 
 
-.guestbook-section {
+/* experiências - inicio */
+
+.experiences-section {
   display: flex;
   gap: 60px;
   padding: 80px 80px;
   background: #ffffff;
+  align-items: flex-start;
 }
 
-.guestbook-left h2 {
+.experiences-left {
+  flex: 1;
+  max-width: 420px;
+}
+
+.experiences-left h2 {
   font-size: 2.5rem;
   color: #7a2c8f;
+  margin-bottom: 20px;
 }
 
-.guestbook-left p {
+.experiences-left p {
   color: #a020c0;
   line-height: 1.8;
-  margin-top: 40px;
 }
 
-.guestbook-left {
-  flex: 1;
-}
-
-.guestbook-right {
-  flex: 1;
-}
-
-.guestbook-form {
+.experiences-right {
+  flex: 1.4;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
+  justify-content: center;
 }
 
-.guestbook-form input,
-.guestbook-form textarea {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.experience-card {
+  display: flex;
+  gap: 24px;
+  background: #f8f2fa;
+  border-radius: 18px;
+  padding: 28px 28px;
+  box-shadow: 0 10px 26px rgba(122, 44, 143, 0.10);
+  max-width: 760px;
+  width: 100%;
 }
 
-.guestbook-form button {
-  padding: 12px;
-  background: #b57edc;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.experience-image-wrapper {
+  flex: 0 0 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.guestbook-card {
-  padding: 15px;
-  border-radius: 10px;
-  background: #f8f8f8;
-  margin-bottom: 15px;
+.experience-image {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/*livro vista - fim*/
+.experience-content h3 {
+  color: #7a2c8f;
+  margin-bottom: 6px;
+}
+
+.experience-role {
+  color: #4a2c4a;
+  margin-bottom: 4px;
+}
+
+.experience-period {
+  font-size: 0.9rem;
+  color: #8c6bb2;
+  margin-bottom: 12px;
+}
+
+.experience-description {
+  color: #a020c0;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* experiências - fim */
 
 /* contact - inicio */
 
@@ -493,7 +569,7 @@ section[id] {
   .about,
   .skills,
   .projects,
-  .guestbook-section,
+  .experiences-section,
   .contact {
     padding: 80px 40px;
     gap: 40px;
@@ -508,7 +584,7 @@ section[id] {
   .about,
   .skills,
   .projects,
-  .guestbook-section,
+  .experiences-section,
   .contact {
     flex-direction: column;
     padding: 72px 24px;
@@ -518,24 +594,84 @@ section[id] {
 
   /* Garante que Contact e Guestbook ocupem toda a largura no mobile,
      empilhando exatamente da mesma forma */
-  .guestbook-left,
-  .guestbook-right,
+  .experiences-left,
+  .experiences-right,
   .contact-left,
   .contact-right {
     width: 100%;
   }
 
+  /* ajusta alinhamento das colunas de skills quando empilhadas no mobile */
+  .skills-right {
+    margin-top: 24px;
+    max-width: 100%;
+  }
+
+  /* imagem de experiências ocupando largura total em telas menores */
+  .experience-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-image-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .experience-image {
+    max-height: none;
+  }
+
   .about-image img,
-  .skills-image img,
   .project-image img {
     width: 260px;
     max-width: 100%;
   }
 
+  /* ajustes de SKILLS em telas menores (cards mais leves e com ícones menores) */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
     justify-items: center;
+  }
+
+  .skill-item {
+    padding: 12px 8px;
+    box-shadow: 0 4px 14px rgba(122, 44, 143, 0.08);
+  }
+
+  .skill-icon,
+  .skill-icon-product {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ajustes de PROJECTS em telas menores (menos rolagem e melhor uso de largura) */
+  .project-image img {
+    width: 100%;
+    height: auto;
+    max-width: 340px;
+  }
+
+  .project-content {
+    max-width: 100%;
+  }
+
+  .project-text {
+    max-height: none;
+  }
+
+  .tech-tags {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .next-btn,
+  .prev-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 
   .contact-form button {
@@ -545,6 +681,11 @@ section[id] {
   .footer {
     padding: 56px 16px;
   }
+
+  /* em telas médias/pequenas, altura automática para não cortar conteúdo */
+  .projects {
+    height: auto;
+  }
 }
 
 /* Ajustes extras para telas muito pequenas (mobile) */
@@ -552,7 +693,7 @@ section[id] {
   .about,
   .skills,
   .projects,
-  .guestbook-section,
+  .experiences-section,
   .contact {
     padding: 56px 16px;
     gap: 24px;
@@ -561,9 +702,24 @@ section[id] {
   .about-content h2,
   .skills-left h2,
   .project-content h2,
-  .guestbook-left h2,
+  .experiences-left h2,
   .contact-left h2 {
     font-size: 1.8rem;
+  }
+
+  /* em celulares bem pequenos, diminui ainda mais o peso visual dos cards de skills */
+  .skills-grid {
+    gap: 16px;
+  }
+
+  .skill-item {
+    padding: 10px 6px;
+  }
+
+  .skill-icon,
+  .skill-icon-product {
+    width: 40px;
+    height: 40px;
   }
 
   .contact-left h3 {

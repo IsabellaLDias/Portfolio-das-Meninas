@@ -1,77 +1,57 @@
-import { useState, useEffect } from 'react';
-import laptop from "../../assets/images/laptop.png";
-
-// Fallback caso a API do GitHub não retorne dados
-const FALLBACK_SKILLS = [
-  { name: 'JavaScript', percent: 30 },
-  { name: 'TypeScript', percent: 15 },
-  { name: 'React', percent: 20 },
-  { name: 'HTML', percent: 15 },
-  { name: 'CSS', percent: 15 },
-  { name: 'Git', percent: 5 },
-];
+import {
+  FaJava,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaGitAlt,
+  FaDocker,
+} from "react-icons/fa";
+import { SiSpringboot, SiC, SiMysql, SiPostgresql, SiJirasoftware } from "react-icons/si";
 
 function Skills({ lang }) {
-  const [skillsData, setSkillsData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchAllLanguages = async () => {
-      try {
-        const username = 'mariaoliveira27'; 
-        
-        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-        const repos = await reposResponse.json();
-
-        const languageStats = {};
-
-        await Promise.all(
-          repos.map(async (repo) => {
-            if (!repo.fork) { 
-              const langRes = await fetch(repo.languages_url);
-              const langs = await langRes.json();
-              
-              Object.keys(langs).forEach((lang) => {
-                languageStats[lang] = (languageStats[lang] || 0) + langs[lang];
-              });
-            }
-          })
-        );
-
-        const totalBytes = Object.values(languageStats).reduce((a, b) => a + b, 0);
-
-        // Se por algum motivo não houver dados, usa fallback
-        if (!totalBytes) {
-          setSkillsData(FALLBACK_SKILLS);
-          setLoading(false);
-          return;
-        }
-        
-        const formattedSkills = Object.entries(languageStats)
-          .map(([name, value]) => ({
-            name,
-            percent: Math.round((value / totalBytes) * 100)
-          }))
-          .filter(skill => skill.percent > 0.1) 
-          .sort((a, b) => b.percent - a.percent)
-          .slice(0, 12); 
-
-        setSkillsData(formattedSkills.length ? formattedSkills : FALLBACK_SKILLS);
-        setLoading(false);
-      } catch (error) {
-        console.error("Erro ao buscar dados globais:", error);
-        setSkillsData(FALLBACK_SKILLS);
-        setLoading(false);
-      }
-    };
-
-    fetchAllLanguages();
-  }, []); // Array de dependências vazio para rodar apenas uma vez
-
   const title = lang === 'pt' ? 'Habilidades' : 'Skills';
   const text = lang === 'pt'
-    ? 'Gosto de criar coisas que vivem na internet, sejam sites, aplicações ou qualquer coisa entre esses dois mundos.'
-    : 'I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.';
+    ? 'Estas são as principais tecnologias e competências técnicas que utilizo no meu dia a dia como Product Owner e Desenvolvedora Front-end.'
+    : 'These are the main technologies and technical skills I use daily as a Product Owner and Front-end Developer.';
+
+  const techSkills = [
+    { namePt: 'Java', nameEn: 'Java', Icon: FaJava },
+    { namePt: 'C', nameEn: 'C', Icon: SiC },
+    { namePt: 'JavaScript', nameEn: 'JavaScript', Icon: FaJs },
+    { namePt: 'HTML5', nameEn: 'HTML5', Icon: FaHtml5 },
+    { namePt: 'CSS3', nameEn: 'CSS3', Icon: FaCss3Alt },
+    { namePt: 'React', nameEn: 'React', Icon: FaReact },
+    { namePt: 'Spring Boot', nameEn: 'Spring Boot', Icon: SiSpringboot },
+    { namePt: 'SQL', nameEn: 'SQL', Icon: SiMysql },
+    { namePt: 'PostgreSQL', nameEn: 'PostgreSQL', Icon: SiPostgresql },
+    { namePt: 'Git', nameEn: 'Git', Icon: FaGitAlt },
+    { namePt: 'Docker', nameEn: 'Docker', Icon: FaDocker },
+    { namePt: 'Jira', nameEn: 'Jira', Icon: SiJirasoftware },
+  ];
+
+  const productSkills = [
+    {
+      namePt: 'Product Ownership',
+      nameEn: 'Product Ownership',
+      short: 'PO',
+    },
+    {
+      namePt: 'Gestão de Backlog',
+      nameEn: 'Backlog Management',
+      short: 'Backlog',
+    },
+    {
+      namePt: 'User Stories & Critérios de Aceite',
+      nameEn: 'User Stories & Acceptance Criteria',
+      short: 'User Stories',
+    },
+    {
+      namePt: 'Planejamento de Sprint (Scrum/Kanban)',
+      nameEn: 'Sprint Planning (Scrum/Kanban)',
+      short: 'Scrum/Kanban',
+    },
+  ];
 
   return (
     <section id="skills" className="skills relative">
@@ -79,49 +59,52 @@ function Skills({ lang }) {
         <h2>{title}</h2>
         <p>{text}</p>
 
+        <h3 className="skills-subtitle">
+          {lang === 'pt' ? 'Linguagens & Tecnologias' : 'Languages & Technologies'}
+        </h3>
         <div className="skills-grid">
-          {loading ? (
-            <p>Carregando skills...</p>
-          ) : (
-            skillsData.map((skill) => (
-              <SkillCircle 
-                key={skill.name} 
-                percent={skill.percent} 
-                name={skill.name} 
-              />
-            ))
-          )}
+          {techSkills.map((skill) => {
+            const label = lang === 'pt' ? skill.namePt : skill.nameEn;
+            const Icon = skill.Icon;
+            return (
+              <div key={label} className="skill-item">
+                <div className="skill-icon">
+                  <Icon size={34} />
+                </div>
+                <p>{label}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      <div className="skills-image">
-        <img src={laptop} alt="Laptop" />
+      <div className="skills-right">
+        <h3 className="skills-subtitle">
+          {lang === 'pt' ? 'Gestão de Produto' : 'Product Management'}
+        </h3>
+        <div className="skills-grid skills-grid-product">
+          {productSkills.map((skill) => {
+            const label = lang === 'pt' ? skill.namePt : skill.nameEn;
+            return (
+              <div key={label} className="skill-item skill-item-product">
+                <div className="skill-icon skill-icon-product">
+                  {skill.short}
+                </div>
+                <p>{label}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <button
         type="button"
-        onClick={() => document.getElementById('guestbook')?.scrollIntoView({ behavior: 'smooth' })}
+        onClick={() => document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' })}
         className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer focus:outline-none"
       >
         <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
       </button>
     </section>
-  );
-}
-
-function SkillCircle({ percent, name }) {
-  return (
-    <div className="skill-item">
-      <div
-        className="circle"
-        style={{
-          background: `conic-gradient(#c68ad8 ${percent}%, #e5e5e5 ${percent}%)`
-        }}
-      >
-        <div className="inner">{percent}%</div>
-      </div>
-      <p>{name}</p>
-    </div>
   );
 }
 

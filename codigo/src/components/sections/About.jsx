@@ -3,13 +3,14 @@ import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import profile from "../../assets/images/profile.png";
+import profile from "../../assets/images/Isabella L. D. Santos.jpg";
 
 function About({ lang }) {
-  const title = lang === 'pt' ? 'Sobre mim' : 'About Me'
+  const title = lang === 'pt' ? 'Sobre Mim' : 'About Me'
   const text = lang === 'pt'
-    ? 'Estudante de Engenharia de Software, inquisitiva e com habilidades de liderança, buscando aplicar sólidos conhecimentos de desenvolvimento com foco em colaboração, comunicação e paixão.'
-    : 'An inquisitive Software Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.'
+    ? 'Estudante de Engenharia de Software na PUC Minas, atuo na intersecção entre Gestão de Produto e Desenvolvimento Frontend. Tenho experiência prática na liderança de backlogs, escrita de user stories e criação de interfaces acessíveis. Meu objetivo é unir visão estratégica e excelência técnica para construir soluções digitais que priorizam a experiência do usuário e a agilidade.'
+    : 'Software Engineering student at PUC Minas, working at the intersection of Product Ownership and Frontend Development. I have hands-on experience managing backlogs, writing user stories, and building accessible interfaces. My goal is to combine strategic mindset with technical excellence to deliver digital solutions focused on user experience and agile methodologies.'
+
   const buttonLabel = lang === 'pt' ? 'Visualizar CV' : 'View CV'
 
   const [showCv, setShowCv] = useState(false)
@@ -17,8 +18,10 @@ function About({ lang }) {
   const containerRef = useRef(null)
   const defaultLayoutPluginInstance = defaultLayoutPlugin()
 
-  // Usa o mesmo arquivo de currículo para ambos os idiomas
-  const fileUrl = `/cv-pt.pdf`
+  // Usa o currículo de acordo com o idioma selecionado
+  const fileUrl = lang === 'pt'
+    ? `/CV - Isabella Dias (PT).pdf`
+    : `/CV - Isabella Dias (EN).pdf`
 
   const handleDocumentLoad = () => {
     setIsLoaded(true)

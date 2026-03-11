@@ -5,7 +5,7 @@ function Navbar({ lang, setLang }) {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'projects', 'skills', 'guestbook', 'contact']
+    const sectionIds = ['home', 'about', 'projects', 'skills', 'experiences', 'contact']
     const navbarOffset = 80
 
     const handleScroll = () => {
@@ -101,9 +101,9 @@ function Navbar({ lang, setLang }) {
             {lang === 'pt' ? 'Habilidades' : 'Skills'}
           </a>
         </li>
-        <li className={activeSection === 'guestbook' ? 'active' : ''}>
-          <a href="#guestbook" onClick={handleNavClick('guestbook')}>
-            {lang === 'pt' ? 'Livro de visitas' : 'Guestbook'}
+        <li className={activeSection === 'experiences' ? 'active' : ''}>
+          <a href="#experiences" onClick={handleNavClick('experiences')}>
+            {lang === 'pt' ? 'Experiências' : 'Experiences'}
           </a>
         </li>
         <li className={activeSection === 'contact' ? 'active' : ''}>
@@ -147,9 +147,9 @@ function Navbar({ lang, setLang }) {
             {lang === 'pt' ? 'Habilidades' : 'Skills'}
           </a>
         </li>
-        <li className={activeSection === 'guestbook' ? 'active' : ''}>
-          <a href="#guestbook" onClick={handleNavClick('guestbook')}>
-            {lang === 'pt' ? 'Livro de visitas' : 'Guestbook'}
+        <li className={activeSection === 'experiences' ? 'active' : ''}>
+          <a href="#experiences" onClick={handleNavClick('experiences')}>
+            {lang === 'pt' ? 'Experiências' : 'Experiences'}
           </a>
         </li>
         <li className={activeSection === 'contact' ? 'active' : ''}>
