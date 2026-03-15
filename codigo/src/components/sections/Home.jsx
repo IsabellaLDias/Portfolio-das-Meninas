@@ -14,41 +14,19 @@ const Home = ({ lang }) => {
   }, []);
 
   return (
-    <section id="home" className="relative w-full h-screen bg-lavender-main flex items-center">
-
-      <div className="absolute top-0 right-0 h-full w-full z-10 pointer-events-none overflow-hidden">
-        <svg
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="h-full w-full absolute right-0"
-        >
-          <motion.path
-            fill="#ffffff"
-            initial={{
-              d: "M 100 0 L 100 0 C 100 0 100 0 100 0 L 100 100 L 100 100 C 100 100 100 100 100 100 Z"
-            }}
-            animate={{
-              d: "M 100 0 L 40 0 C 60 30 20 50 50 100 L 100 100 Z"
-            }}
-            transition={{
-              duration: 2,
-              ease: [0.22, 1, 0.36, 1]
-            }}
-          />
-        </svg>
-      </div>
+    <section id="home" className="relative w-full h-screen bg-black flex items-center overflow-hidden">
 
       {/* --- 3. Conteúdo Principal (Texto) --- */}
-      <div className="relative z-20 container mx-auto px-8 ml-10">
-        <div className="space-y-2">
+      <div className="relative z-20 container mx-auto px-8 md:ml-10 flex-1">
+        <div className="space-y-2 max-w-xl">
 
           {/* Texto "NOME" com efeito de contorno (Outline) */}
-          <h2 className="text-7xl font-bold tracking-wider text-transparent"
-            style={{ WebkitTextStroke: '2px #4A2c4A' }}>
+          <h2 className="text-5xl md:text-7xl font-bold tracking-wider text-transparent"
+            style={{ WebkitTextStroke: '2px #E0BBE4' }}>
             ISABELLA DIAS
           </h2>
 
-          <h3 className="text-3xl font-bold text-deep-purple">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#E0BBE4]">
             {lang === 'pt'
               ? 'Engenheira + Desenvolvedora Front-end Júnior'
               : 'Engineer + Junior Front-end Developer'}
@@ -82,20 +60,23 @@ const Home = ({ lang }) => {
         </div>
       </div>
 
-
-      {/* --- 3D Spline (Lado Direito) --- */}
+      {/* --- 3D Spline (lado direito, interativo) --- */}
       {showRoom && (
-        <div className="hidden md:flex absolute right-0 top-0 bottom-0 w-[55%] z-20 flex items-center overflow-hidden">
+        <div className="relative hidden md:flex flex-1 h-full items-center justify-center z-10 overflow-hidden">
+          {/* gradiente sutil no lado esquerdo para leitura do texto */}
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black via-black/60 to-transparent pointer-events-none" />
+
           <iframe
-            src="https://my.spline.design/genkubgreetingrobot-imhrN7Oy4rbGExHIiwDNAXxu/"
+            src="https://my.spline.design/boxeshover-TiVNA6AeEaglQQyJqCLbAeUH/"
             frameBorder="0"
-            width="100%"
-            height="100%"
+            width="120%"
+            height="120%"
             loading="lazy"
             title="Robô 3D do portfólio"
             style={{
-              transform: 'scale(0.9) translate(205px, 100px)',
-              transformOrigin: 'center top',
+              border: 'none',
+              transform: 'scale(1.3) translate(5%, -8%)',
+              transformOrigin: 'center',
             }}
           ></iframe>
         </div>
@@ -110,7 +91,7 @@ const Home = ({ lang }) => {
             nextSection.scrollIntoView({ behavior: 'smooth' })
           }
         }}
-        className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer focus:outline-none"
+        className="absolute bottom-8 left-10 flex items-center gap-2 text-[#E0BBE4] font-medium animate-bounce cursor-pointer focus:outline-none z-30"
       >
         <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
       </button>

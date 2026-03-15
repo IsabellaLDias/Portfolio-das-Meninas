@@ -80,7 +80,7 @@ const Experiences = ({ lang }) => {
         onClick={() =>
           document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
         }
-        className="absolute bottom-8 left-10 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer focus:outline-none"
+        className="absolute bottom-8 left-10 flex items-center gap-2 text-[#E0BBE4] font-medium animate-bounce cursor-pointer focus:outline-none"
       >
         <span>↓</span> {lang === 'pt' ? 'Rolar' : 'Scroll'}
       </button>

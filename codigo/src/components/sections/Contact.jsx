@@ -116,7 +116,7 @@ function Contact({ lang }) {
       </div>
 
       <div
-        className="absolute bottom-8 right-10 z-20 flex items-center gap-2 text-deep-purple font-medium animate-bounce cursor-pointer"
+        className="absolute bottom-8 right-10 z-20 flex items-center gap-2 text-[#E0BBE4] font-medium animate-bounce cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <span>↑</span> {scrollLabel}
