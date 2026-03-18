@@ -27,7 +27,7 @@ function Projects({ lang }) {
           ? "Site de recomendação de filmes e séries, que sugere conteúdos com base na lista pessoal do usuário e em suas avaliações."
           : "Movie and TV show recommendation site that suggests content based on the user’s personal list and ratings.",
       image: cineScoreGif,
-      tech: ["React", "JavaScript", "HTML", "CSS", "REST APIs"],
+      tech: ["JavaScript", "HTML", "CSS", "REST APIs"],
       githubUrl: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2024-2-ti2-3687100-cinescore"
     },
     {
@@ -39,7 +39,7 @@ function Projects({ lang }) {
           ? "Plataforma de e-commerce para empresa de construção, com foco em fluxo de compra, catálogo de produtos e gestão de pedidos."
           : "E-commerce platform for a construction company, focused on purchase flow, product catalog, and order management.",
       image: giostriGif,
-      tech: ["JavaScript", "HTML", "CSS", "React", "Git"],
+      tech: ["JavaScript", "HTML", "CSS", "Git"],
       githubUrl: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti3-9545100-giostri-construcoes"
     },
     {
@@ -51,7 +51,7 @@ function Projects({ lang }) {
           ? "Projeto voltado à otimização do fluxo de contratação de serviços, com tela de contratação em múltiplas etapas e painel administrativo."
           : "Project focused on optimizing the service hiring flow, with a multi-step hiring interface and admin dashboard.",
       image: detoursGif,
-      tech: ["JavaScript", "HTML", "CSS", "React", "Git"],
+      tech: ["JavaScript", "HTML", "CSS", "Git"],
       githubUrl: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti4-3126100-detours-informatica"
     }
   ]
